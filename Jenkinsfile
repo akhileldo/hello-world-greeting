@@ -9,7 +9,7 @@ pipeline {
           }
 }
               steps {
-                 git branch: 'feature-dev', credentialsId: 'alpha-github-access', url: 'https://github.com/akhileldo/hello-world-greeting.git'
+                  git branch: 'feature-dev', credentialsId: 'alpha-github-access', url: 'https://github.com/akhileldo/hello-world-greeting.git'
                   sh 'mvn clean verify -DskipITs=true';
                   junit '*/target/surefire-reports/TEST-.xml'
                   archive 'target/*.war'
